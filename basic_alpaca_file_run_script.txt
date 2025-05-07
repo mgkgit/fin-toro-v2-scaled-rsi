@@ -1,0 +1,3 @@
+python alpaca.py --symbol AAPL --timeframe 5Min --days 2
+python alpaca.py --symbol UPRO --timeframe 5Min --days 2
+python alpaca.py --symbol SSO --timeframe 5Min --days 2

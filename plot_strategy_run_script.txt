@@ -1,0 +1,4 @@
+python plot_strategy.py --file SPY_5Min_strategy_2d.csv --symbol SPY
+python plot_strategy.py --file SPY_5Min_strategy_2d.csv --symbol AAPL
+python plot_strategy.py --file SPY_5Min_strategy_2d.csv --symbol UPRO
+python plot_strategy.py --file SSO_5Min_strategy_2d.csv --symbol SSO

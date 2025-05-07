@@ -1,0 +1,2 @@
+python generate_report_index.py
+open reports/index.html

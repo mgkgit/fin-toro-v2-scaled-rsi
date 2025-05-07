@@ -1,0 +1,3 @@
+python alpaca_strategy.py --symbols SSO --timeframe 5Min --days 2
+python alpaca_strategy.py --symbols UPRO --timeframe 5Min --days 2
+python alpaca_strategy.py --symbols SPY,SSO,UPRO --timeframe 5Min --days 2

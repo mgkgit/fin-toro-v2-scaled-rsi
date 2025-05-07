@@ -1,0 +1,1 @@
+python plot_trades_from_csv.py --symbol SPY --timeframe 5Min --days 2

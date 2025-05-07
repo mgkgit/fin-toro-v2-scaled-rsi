@@ -1,0 +1,1 @@
+video of the ai chat with fin tor ai is on phone
