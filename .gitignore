@@ -1,0 +1,31 @@
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# PyCharm project settings
+.idea/
+
+# Strategy output
+reports/
+*_strategy_*.csv
+*_strategy_chart.png
+*_equity_curve.png
+*_report.html
+*_report.pdf
+
+# Alpaca data files
+*_SIP_*.csv
+
+# MacOS system files
+.DS_Store
+
+# Other cache/log
+*.log
+*.pdf.cache
