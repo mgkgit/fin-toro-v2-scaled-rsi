@@ -1,0 +1,14 @@
+{
+  "symbol": "UPRO",
+  "strategy": "SMA/EMA Crossover",
+  "indicators": {
+    "sma": 20,
+    "ema": 20
+  },
+  "capital": 100000,
+  "stop_loss_pct": 0.002,
+  "take_profit_pct": 0.004,
+  "scaling": true,
+  "max_leverage": 4,
+  "repo_link": "https://github.com/mgkgit/fin-toro-v2-scaled-rsi"
+}

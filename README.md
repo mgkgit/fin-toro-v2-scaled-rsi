@@ -1,27 +1,27 @@
-# 🐂 Fin Toro Strategy Reports
+# 📊 Fin-Toro V2 – Scaled Strategy Engine
 
-Multi-asset backtesting engine for dynamic trading strategies with variable leverage, scaling logic, and automated reporting.
+A modular, backtest-driven trading framework supporting:
+- 📈 SMA/EMA, RSI, and combo logic
+- 🔁 Dynamic leverage and bet sizing
+- ✅ Scaling entries/exits
+- 📄 Auto-generated strategy reports (HTML + PDF)
 
-[![View Strategy Dashboard](https://img.shields.io/badge/🔗%20View%20Dashboard-blue)](https://mgkgit.github.io/fin-toro-strategy-reports/)
+### 🧪 Features
 
----
+- Supports multi-symbol strategy testing
+- Batch equity curve, PnL, and drawdown charting
+- Clean folder structure for trade logs and results
+- JSON-based config input for each symbol
+- GitHub Pages–ready reporting dashboard
 
-## 📈 Features
+### 🚀 Quick Start
 
-- SMA & EMA-based strategy logic
-- Variable leverage (1x to 4x)
-- Scaling in and out of trades
-- Position-based equity tracking
-- CSV logs for trades and equity
-- Auto-generated HTML & PDF reports
-- Batch support for multiple symbols
-- Hosted dashboard via GitHub Pages
+```bash
+# Activate environment
+source .venv/bin/activate
 
----
+# Run strategy & reporting for all symbols
+python batch_generate_reports.py
 
-## 🛠 Setup Instructions
-
-1. Clone this repo:
-   ```bash
-   git clone https://github.com/mgkgit/fin-toro-strategy-reports.git
-   cd fin-toro-strategy-reports
+# Open generated summary
+open index.html
