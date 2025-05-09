@@ -1,0 +1,11 @@
+{
+  "symbol": "SSO",
+  "strategy": "bollinger_breakout",
+  "capital": 100000,
+  "stop_loss_pct": 0.01,
+  "take_profit_pct": 0.015,
+  "max_leverage": 3,
+  "indicators": {
+    "bb": 20
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "symbol": "SPY",
+  "strategy": "sma_ema",
+  "capital": 100000,
+  "stop_loss_pct": 0.002,
+  "take_profit_pct": 0.004,
+  "max_leverage": 4,
+  "indicators": {
+    "sma": 20,
+    "ema": 20
+  }
+}

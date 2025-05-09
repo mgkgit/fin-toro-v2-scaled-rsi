@@ -1,0 +1,12 @@
+{
+  "symbol": "UPRO",
+  "strategy": "rsi_sma_combo",
+  "capital": 100000,
+  "stop_loss_pct": 0.003,
+  "take_profit_pct": 0.005,
+  "max_leverage": 4,
+  "indicators": {
+    "sma": 14,
+    "rsi": 14
+  }
+}

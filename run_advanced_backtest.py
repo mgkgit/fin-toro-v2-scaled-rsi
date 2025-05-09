@@ -1,42 +1,45 @@
 # run_advanced_backtest.py
 
-import json
 import pandas as pd
-from pathlib import Path
 from advanced_backtest import simulate_strategy_advanced
+from strategy_engine import apply_indicators
 
-# === Load config ===
-with open("config.json") as f:
-    config = json.load(f)
+# === Test configuration ===
+config = {
+    "symbol": "SPY",
+    "strategy": "macd",  # Try "bollinger", "sma_ema", etc.
+    "capital": 100000,
+    "stop_loss_pct": 0.002,
+    "take_profit_pct": 0.004,
+    "max_leverage": 4
+}
 
 symbol = config["symbol"]
-file_name = f"{symbol}_5Min_strategy_2d.csv"
 
 # === Load price data ===
-df = pd.read_csv(file_name, parse_dates=['timestamp'], index_col='timestamp')
+df = pd.read_csv(f"{symbol}_5Min_strategy_2d.csv", parse_dates=['timestamp'], index_col='timestamp')
+df = apply_indicators(df, strategy=config["strategy"])
 
-# === Run backtest ===
+# === Simulate strategy ===
 trades, equity = simulate_strategy_advanced(
     df,
-    strategy=config.get("strategy_code", "sma_ema"),
+    strategy=config["strategy"],
     initial_capital=config["capital"],
     stop_loss_pct=config["stop_loss_pct"],
     take_profit_pct=config["take_profit_pct"],
-    max_leverage=config["max_leverage"],
-    symbol=symbol
+    max_leverage=config["max_leverage"]
 )
 
-# === Prepare output folder ===
-outdir = Path(symbol)
-outdir.mkdir(exist_ok=True)
+# === Save outputs ===
+trades.to_csv(f"{symbol}_advanced_trade_log.csv", index=False)
+equity.to_csv(f"{symbol}_advanced_equity_curve.csv", index=False)
 
-# === Save results ===
-trades.to_csv(outdir / f"{symbol}_advanced_trade_log.csv", index=False)
-equity.to_csv(outdir / f"{symbol}_advanced_equity_curve.csv", index=False)
-
-# === Print confirmation ===
-print(f"\n📊 Trade Log for {symbol} (sample):")
+print("\n📊 Sample Trades:")
 print(trades.head())
+
 print("\n📈 Final Equity:")
 print(equity.tail(1))
-print(f"\n💾 Saved to: {outdir}/")
+
+print("\n💾 Exported:")
+print(f" - {symbol}_advanced_trade_log.csv")
+print(f" - {symbol}_advanced_equity_curve.csv")
